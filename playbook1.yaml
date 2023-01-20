@@ -1,0 +1,20 @@
+---
+- name: Install apache
+  hosts: hosts
+  tasks:
+        - name: Installing tree
+          apt: 
+              name: tree
+              state: latest
+        - name: Installing samba
+          apt:
+              name: samba
+              state: latest
+          notify:
+                 - start samba
+  handlers:
+           - name: start samba
+             service: 
+                     name: samba
+                     state: started
+                         
