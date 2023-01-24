@@ -1,0 +1,12 @@
+---
+- name: installing samba
+  hosts: hosts
+  tasks:
+        - name: installation of samba
+          apt:
+              name: samba
+              state: latest
+        - name: starting samba service
+          service:
+                  name: samba
+                  state: started
