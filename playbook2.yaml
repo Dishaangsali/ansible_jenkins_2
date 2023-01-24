@@ -1,6 +1,8 @@
 ---
 - name: installing samba
   hosts: hosts
+  vars_files:
+    - paas.yaml          
   tasks:
         - name: installation of samba
           apt:
@@ -8,5 +10,5 @@
               state: latest
         - name: starting samba service
           service:
-                  name: samba
+                  name: smbd
                   state: started
