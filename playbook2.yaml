@@ -2,7 +2,7 @@
 - name: installing samba
   hosts: hosts
   vars_files:
-    - paas.yaml          
+    - paas.yaml 
   tasks:
         - name: installation of samba
           apt:
